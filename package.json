@@ -1,0 +1,23 @@
+{
+  "name": "fabric_cropper",
+  "version": "1.0.0",
+  "description": "Canvas cropper using fabric.js",
+  "keywords": [
+    "fabric",
+    "cropper"
+  ],
+  "license": "ISC",
+  "author": "myounis1996",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "fabric": "^6.7.0"
+  },
+  "devDependencies": {
+    "vite": "^7.0.3"
+  }
+}
