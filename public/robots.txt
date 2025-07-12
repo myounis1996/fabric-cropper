@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://fabric-cropper.web.app/seo/sitemap.xml 

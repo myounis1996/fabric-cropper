@@ -4,7 +4,7 @@
  */
 export function setupHandles(cropRect) {
     const cornerSize = 24, sideHandleLength = 16, strokeWidth = 3,
-        lArmLength = 14, color = '#ffffff', shadow = 'rgba(255,255,255,0.4)';
+        lArmLength = 14, color = '#2196f3', shadow = 'rgba(33, 150, 243, 0.6)';
 
     /* ---------- painters ------------------------------------------------ */
 

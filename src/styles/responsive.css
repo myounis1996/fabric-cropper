@@ -1,0 +1,162 @@
+/* Responsive Design */
+
+/* Tablet and smaller desktop */
+@media (max-width: 768px) {
+    .container {
+        margin: 0;
+        border-radius: 0;
+        padding: 15px;
+    }
+    
+    .logo {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .logo-text {
+        text-align: center;
+    }
+    
+    .logo-text h1 {
+        font-size: 24px;
+    }
+    
+    .tagline {
+        font-size: 14px;
+    }
+    
+    body {
+        padding: 0;
+    }
+    
+    h1 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .canvas-container {
+        margin: auto;
+        border-radius: var(--radius-sm);
+    }
+    
+    /* Crop Settings Panel */
+    #crop-settings {
+        padding: var(--spacing-xl);
+        margin-top: var(--spacing-xl);
+    }
+    
+    .crop-controls {
+        gap: var(--spacing-lg);
+    }
+    
+    .dimension-inputs {
+        gap: var(--spacing-lg);
+        justify-content: center;
+        padding: 24px 12px 12px 12px;
+    }
+    
+    .action-buttons {
+        gap: 10px;
+        justify-content: center;
+    }
+    
+    #crop-settings input {
+        width: 90px;
+        padding: 14px 16px;
+        font-size: 16px;
+        border-radius: var(--radius-lg);
+    }
+    
+    #crop-settings label {
+        font-size: 12px;
+        min-width: 100px;
+    }
+    
+    #crop-settings label::before {
+        font-size: 10px;
+        padding: 3px 10px;
+        top: -10px;
+    }
+    
+    #apply-crop, #save-crop, #reset-crop {
+        padding: 12px 20px;
+        font-size: 13px;
+        min-width: 100px;
+    }
+    
+    /* Upload Panel */
+    .upload-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .test-image-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    
+    .test-image-item img {
+        height: 60px;
+    }
+    
+    .drop-zone {
+        padding: 20px;
+    }
+    
+    .drop-zone-content svg {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .dimension-inputs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #apply-crop, #save-crop, #reset-crop {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .test-image-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .drop-zone {
+        padding: 15px;
+    }
+    
+    .upload-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+    
+    /* Footer responsive */
+    .footer-content {
+        padding: 0 var(--spacing-lg);
+    }
+    
+    .footer-info p {
+        font-size: 13px;
+    }
+    
+    .footer-subtitle {
+        font-size: 11px !important;
+    }
+    
+    .github-link {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 12px;
+    }
+} 

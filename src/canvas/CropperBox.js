@@ -1,4 +1,4 @@
-import {Rect, Group, FabricImage} from 'fabric';
+import {Rect, Group, FabricImage, Shadow} from 'fabric';
 import {createGridLines, setupHandles, OverlayMask, checkBounds} from './cropper/index.js';
 
 export class CropperBox {
@@ -17,8 +17,8 @@ export class CropperBox {
             width: canvasWidth,
             height: canvasHeight,
             fill: 'transparent',
-            stroke: '#ffffff',
-            strokeWidth: 1.5,
+            stroke: '#2196f3',
+            strokeWidth: 2,
             strokeDashArray: [8, 4],
             selectable: true,
             evented: true,
@@ -31,7 +31,13 @@ export class CropperBox {
             cornerStrokeColor: '#00a8ff',
             cornerSize: 24,
             cornerStyle: 'circle',
-            padding: 0
+            padding: 0,
+            shadow: new Shadow({
+                color: 'rgba(0, 0, 0, 0.3)',
+                blur: 4,
+                offsetX: 0,
+                offsetY: 0
+            })
         });
 
         const gridLines = createGridLines(this.canvas);
@@ -93,6 +99,18 @@ export class CropperBox {
         this.cropRect.set({scaleX: 1, scaleY: 1, left: this.canvas.getWidth() / 2, top: this.canvas.getHeight() / 2});
         this.cropRect.setCoords();
         this._updateOverlay();
+    }
+
+    resetToInitialState() {
+        if (this.cropRect) {
+            this.updateCropRectangle();
+        }
+    }
+
+    updateCropRectangle() {
+        if (!this.cropRect) return;
+        this.canvas.remove(this.cropRect);
+        this.createCropRectangle();
     }
 
     async applyCrop() {

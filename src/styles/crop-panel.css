@@ -1,0 +1,210 @@
+/* Crop Settings Panel */
+#crop-settings {
+    margin-top: var(--spacing-xxl);
+    padding: var(--spacing-xxl);
+    border-top: 1px solid var(--border-medium);
+    background: linear-gradient(135deg, var(--background-gray) 0%, var(--background-white) 100%);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+    animation: slideInUp 0.4s ease-out;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#crop-settings::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--success-green), var(--warning-orange));
+}
+
+.crop-controls {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.dimension-inputs {
+    display: flex;
+    gap: var(--spacing-xl);
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xxxl) var(--spacing-xl) var(--spacing-xl) var(--spacing-xl);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%);
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: all var(--transition-normal);
+    overflow: hidden;
+}
+
+.dimension-inputs::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(33, 150, 243, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(76, 175, 80, 0.03) 0%, transparent 50%);
+    border-radius: var(--radius-xl);
+    pointer-events: none;
+}
+
+.action-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: var(--spacing-sm);
+}
+
+/* Input Labels */
+#crop-settings label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xl);
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    position: relative;
+    min-width: 120px;
+    padding-top: var(--spacing-lg);
+}
+
+#crop-settings label::before {
+    content: attr(data-label);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+    color: var(--background-white);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-xxl);
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 10;
+}
+
+/* Input Fields */
+#crop-settings input {
+    width: 100px;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(135deg, var(--background-white) 0%, var(--background-gray) 100%);
+    transition: var(--transition-bezier);
+    box-shadow: var(--shadow-md);
+    color: var(--text-dark);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+#crop-settings input::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: var(--radius-xl);
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+}
+
+#crop-settings input::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s ease;
+}
+
+#crop-settings input:hover::before {
+    left: 100%;
+}
+
+#crop-settings input:hover {
+    border-color: var(--primary-blue);
+    box-shadow: 0 8px 24px rgba(33, 150, 243, 0.2);
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, var(--background-white) 0%, #f0f8ff 100%);
+}
+
+#crop-settings input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.15), 0 8px 24px rgba(33, 150, 243, 0.2);
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, var(--background-white) 0%, #e3f2fd 100%);
+    animation: inputPulse 2s infinite;
+}
+
+#crop-settings input::placeholder {
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 16px;
+    opacity: 0.7;
+}
+
+/* Input Validation */
+#crop-settings input:valid {
+    border-color: var(--success-green);
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.15);
+    background: linear-gradient(135deg, var(--background-white) 0%, #f0fff4 100%);
+}
+
+#crop-settings input:valid:focus {
+    border-color: var(--success-green);
+    box-shadow: 0 0 0 4px rgba(39, 174, 96, 0.15), 0 8px 24px rgba(39, 174, 96, 0.2);
+    background: linear-gradient(135deg, var(--background-white) 0%, #e8f5e8 100%);
+}
+
+@keyframes inputPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.15), 0 8px 24px rgba(33, 150, 243, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.25), 0 8px 24px rgba(33, 150, 243, 0.3);
+    }
+}
+
+/* Hide animation for dimension inputs */
+.dimension-inputs[style*="display: none"] {
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+    padding: 0 var(--spacing-xl);
+    margin: 0;
+} 

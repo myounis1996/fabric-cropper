@@ -1,0 +1,114 @@
+/* Button Base Styles */
+.btn {
+    padding: var(--spacing-lg) var(--spacing-xxl);
+    border: none;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 120px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left var(--transition-slow);
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Primary Button (Apply Crop) */
+#apply-crop {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+    color: var(--background-white);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+#apply-crop:hover {
+    background: linear-gradient(135deg, var(--primary-blue-dark) 0%, var(--primary-blue-darker) 100%);
+    box-shadow: 0 8px 20px rgba(33, 150, 243, 0.4);
+}
+
+#apply-crop:active {
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+/* Success Button (Save Crop) */
+#save-crop {
+    background: linear-gradient(135deg, var(--success-green) 0%, var(--success-green-dark) 100%);
+    color: var(--background-white);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+#save-crop:hover {
+    background: linear-gradient(135deg, var(--success-green-dark) 0%, var(--success-green-darker) 100%);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+}
+
+#save-crop:active {
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+/* Secondary Button (Reset) */
+#reset-crop {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+    color: var(--text-light);
+    border: 2px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#reset-crop:hover {
+    background: linear-gradient(135deg, #e0e0e0 0%, #d0d0d0 100%);
+    border-color: #ccc;
+    color: var(--text-dark);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+#reset-crop:active {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading State */
+.btn.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.btn.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+} 

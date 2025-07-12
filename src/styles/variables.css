@@ -1,0 +1,143 @@
+/* CSS Custom Properties */
+:root {
+    --crop-border: #2196f3;
+    --handle-fill: #ffffff;
+    --overlay-color: rgba(0, 0, 0, 0.5);
+    --crop-shadow: rgba(0, 0, 0, 0.3);
+    --handle-bg: rgba(255, 255, 255, 0.8);
+    --handle-border: rgba(0, 0, 0, 0.2);
+    
+    /* Colors */
+    --primary-blue: #2196f3;
+    --primary-blue-dark: #1976d2;
+    --primary-blue-darker: #1565c0;
+    --success-green: #4caf50;
+    --success-green-dark: #388e3c;
+    --success-green-darker: #2e7d32;
+    --warning-orange: #ff9800;
+    --text-dark: #2c3e50;
+    --text-light: #666;
+    --text-muted: #95a5a6;
+    --border-light: #e1e8ed;
+    --border-medium: #e0e0e0;
+    --background-light: #f5f5f5;
+    --background-white: #ffffff;
+    --background-gray: #f8f9fa;
+    
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-xl: 20px;
+    --spacing-xxl: 24px;
+    --spacing-xxxl: 32px;
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 10px;
+    --radius-xl: 12px;
+    --radius-xxl: 16px;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.15);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    --transition-bezier: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Styles */
+body {
+    margin: 0;
+    padding: var(--spacing-xl);
+    font-family: Arial, sans-serif;
+    background-color: var(--background-light);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--background-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    padding: var(--spacing-xl);
+    min-height: 100vh;
+}
+
+/* Enhanced Footer Styles */
+.footer {
+    margin-top: var(--spacing-xxl);
+    padding: var(--spacing-xl) 0;
+    border-top: 1px solid var(--border-medium);
+    background: linear-gradient(135deg, var(--background-gray) 0%, var(--background-white) 100%);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
+}
+
+.footer-info {
+    text-align: center;
+}
+
+.footer-info p {
+    margin: 0;
+    color: var(--text-dark);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.footer-subtitle {
+    color: var(--text-light) !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    margin-top: var(--spacing-xs) !important;
+}
+
+.footer-links {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.github-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: linear-gradient(135deg, #333 0%, #555 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    font-size: 13px;
+    font-weight: 500;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+}
+
+.github-link:hover {
+    background: linear-gradient(135deg, #555 0%, #777 100%);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.github-link svg {
+    width: 16px;
+    height: 16px;
+} 

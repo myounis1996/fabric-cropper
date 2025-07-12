@@ -3,19 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabric.js Cropper</title>
-    <link rel="stylesheet" href="src/styles/cropper.css">
+    
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
+    
+    <!-- Primary Meta Tags -->
+    <title>Fabric.js Image Cropper - Free Online Image Cropping Tool</title>
+    <meta name="title" content="Fabric.js Image Cropper - Free Online Image Cropping Tool">
+    <meta name="description" content="Free online image cropper built with Fabric.js. Crop, resize, and edit images with precision. No registration required, works directly in your browser.">
+    <meta name="keywords" content="image cropper, online cropper, fabric.js, image editing, crop tool, free cropper, web cropper, image resize">
+    <meta name="author" content="myounis1996">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fabric-cropper.web.app/">
+    <meta property="og:title" content="Fabric.js Image Cropper - Free Online Image Cropping Tool">
+    <meta property="og:description" content="Free online image cropper built with Fabric.js. Crop, resize, and edit images with precision. No registration required, works directly in your browser.">
+    <meta property="og:image" content="https://fabric-cropper.web.app/seo/og-image.png">
+    <meta property="og:site_name" content="Fabric.js Image Cropper">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://fabric-cropper.web.app/">
+    <meta property="twitter:title" content="Fabric.js Image Cropper - Free Online Image Cropping Tool">
+    <meta property="twitter:description" content="Free online image cropper built with Fabric.js. Crop, resize, and edit images with precision. No registration required, works directly in your browser.">
+    <meta property="twitter:image" content="https://fabric-cropper.web.app/seo/og-image.png">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#2196f3">
+    <meta name="msapplication-TileColor" content="#2196f3">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Image Cropper">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fabric-cropper.web.app/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/icons/android-chrome-512x512.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="src/styles/main.css">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Fabric.js Image Cropper",
+      "description": "Free online image cropper built with Fabric.js. Crop, resize, and edit images with precision. No registration required, works directly in your browser.",
+      "url": "https://fabric-cropper.web.app/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "myounis1996",
+        "url": "https://github.com/myounis1996"
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "myounis1996"
+      },
+      "softwareVersion": "1.0.0",
+      "featureList": [
+        "Image cropping",
+        "Drag and resize crop area",
+        "Export as PNG",
+        "No registration required",
+        "Works in browser"
+      ],
+      "screenshot": "https://fabric-cropper.web.app/seo/og-image.png",
+      "softwareHelp": "https://github.com/myounis1996/fabric-cropper"
+    }
+    </script>
 </head>
 <body>
     <div class="container">
-        <h1>Image Cropper</h1>
+        <header class="app-header">
+            <div class="logo">
+                <img src="/icons/logo_64.png" alt="Fabric.js Image Cropper Logo" width="64" height="64">
+                <div class="logo-text">
+                    <h1>Fabric.js Image Cropper</h1>
+                    <p class="tagline">Free Online Image Cropping Tool</p>
+                </div>
+            </div>
+        </header>
         <div class="canvas-container">
-            <canvas id="c" width="800" height="600"></canvas>
+            <canvas id="c" width="800" height="600" role="img" aria-label="Image cropping canvas"></canvas>
         </div>
         <div id="crop-settings"></div>
-        <div class="footer">
-            Fabric.js Cropper - Drag the handles to adjust the crop area
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>Fabric.js Image Cropper - Drag the handles to adjust the crop area</p>
+                    <p class="footer-subtitle">Free online image cropping tool.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/myounis1996/fabric-cropper" target="_blank" rel="noopener noreferrer" class="github-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        View Source Code
+                    </a>
+                </div>
         </div>
+        </footer>
     </div>
     <script type="module" src="./index.js"></script>
 </body>

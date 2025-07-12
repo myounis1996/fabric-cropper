@@ -1,23 +1,57 @@
 {
-  "name": "fabric_cropper",
+  "name": "fabric-cropper",
   "version": "1.0.0",
-  "description": "Canvas cropper using fabric.js",
+  "description": "A modern, responsive image cropping tool built with Fabric.js. Crop, resize, and edit images with precision directly in your browser - no registration required!",
   "keywords": [
     "fabric",
-    "cropper"
+    "fabricjs",
+    "cropper",
+    "image-cropper",
+    "canvas",
+    "image-editing",
+    "web-tool",
+    "responsive",
+    "drag-drop",
+    "png-export"
   ],
-  "license": "ISC",
-  "author": "myounis1996",
+  "license": "MIT",
+  "author": {
+    "name": "Moha Younis",
+    "email": "myounis1996@gmail.com",
+    "url": "https://github.com/myounis1996"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/myounis1996/fabric-cropper.git"
+  },
+  "homepage": "https://fabric-cropper.web.app",
+  "bugs": {
+    "url": "https://github.com/myounis1996/fabric-cropper/issues"
+  },
   "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "vite",
-    "build": "vite build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && firebase deploy --only hosting"
   },
   "dependencies": {
     "fabric": "^6.7.0"
   },
   "devDependencies": {
+    "terser": "^5.43.1",
     "vite": "^7.0.3"
-  }
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "browserslist": [
+    "Chrome >= 80",
+    "Firefox >= 75",
+    "Safari >= 13",
+    "Edge >= 80"
+  ]
 }

@@ -1,0 +1,73 @@
+/* App Header */
+.app-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xxl);
+    padding: var(--spacing-xl) 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.logo img {
+    flex-shrink: 0;
+    filter: drop-shadow(0 4px 8px rgba(33, 150, 243, 0.3));
+    transition: transform var(--transition-normal);
+    border-radius: 8px;
+}
+
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+.logo-text {
+    text-align: left;
+}
+
+.logo-text h1 {
+    margin: 0;
+    color: var(--text-dark);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.tagline {
+    margin: var(--spacing-xs) 0 0 0;
+    color: var(--text-light);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Typography */
+h1 {
+    text-align: center;
+    color: var(--text-dark);
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Canvas Container */
+.canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+}
+
+.canvas-container canvas {
+    transition: var(--transition-fast);
+}
+
+.canvas-container:hover canvas {
+    box-shadow: 0 4px 16px rgba(33, 150, 243, 0.1);
+} 
