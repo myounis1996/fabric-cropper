@@ -174,25 +174,19 @@ export class ImageUploadPanel {
     setupImage(fabricImg) {
         const existingImages = this.canvasManager.canvas.getObjects().filter(obj => obj.type === 'image');
         existingImages.forEach(img => this.canvasManager.canvas.remove(img));
-
-        const imageWidth = fabricImg.width;
-        const imageHeight = fabricImg.height;
-        
-        const { scale } = this.canvasManager.resizeCanvasToImage(imageWidth, imageHeight);
-        
         fabricImg.set({
             left: 0,
             top: 0,
             originX: 'left',
             originY: 'top',
-            scaleX: scale,
-            scaleY: scale,
+            scaleX: 1,
+            scaleY: 1,
             selectable: false,
             evented: false
         });
 
         this.canvasManager.canvas.add(fabricImg);
-        this.canvasManager.canvas.renderAll();
+        this.canvasManager.setImageObject(fabricImg);
 
         if (this.settingsPanel) {
             this.settingsPanel.resetToInitialState();

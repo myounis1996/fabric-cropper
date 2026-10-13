@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
+            mgr.centerImage();
             settingsPanel.updateConstraints();
             mgr.canvas.requestRenderAll();
         }, 250);
